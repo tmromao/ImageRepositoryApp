@@ -16,6 +16,6 @@ interface ImageDao {
     @Query("SELECT * from IMAGE WHERE id=:id_")
     fun getImage(id_ :Long):LiveData<Image>
 
-    @Query("SELECT * FROM IMAGE WHERE")
+    @Query("SELECT * FROM IMAGE")
     suspend fun getImageList():List<Image>
 }
