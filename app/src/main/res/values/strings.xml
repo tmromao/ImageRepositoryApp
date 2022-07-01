@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ImageRepositoryApp</string>
+    <string name="database">Image.db</string>
 </resources>
