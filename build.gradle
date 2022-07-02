@@ -12,6 +12,7 @@ buildscript {
         retrofitVersion = '2.9.0'
         sandwichVersion = '1.2.0'
         coroutineVersion = '1.4.1'
+        constraintLayoutVersion = '1.0.0-alpha07'
     }
 
     dependencies {

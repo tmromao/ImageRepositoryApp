@@ -92,4 +92,7 @@ dependencies {
 
     //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+
+    //constraint layout
+    implementation "androidx.constraintlayout:constraintlayout-compose:$constraintLayoutVersion"
 }

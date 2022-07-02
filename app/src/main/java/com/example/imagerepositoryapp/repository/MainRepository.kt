@@ -38,7 +38,7 @@ class MainRepository @Inject constructor(
                     imageDao.insertImageList(data)
                     emit(data)
                 }
-                .onError { message() }
+                .onError { onError( message() ) }
                 .onException { onError(message()) }
         }
         else {
