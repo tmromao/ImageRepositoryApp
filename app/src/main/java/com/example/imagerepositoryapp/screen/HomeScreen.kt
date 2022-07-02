@@ -1,9 +1,13 @@
 package com.example.imagerepositoryapp.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -14,9 +18,34 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.imagerepositoryapp.Image
 import com.example.imagerepositoryapp.util.NetworkImage
+import com.example.imagerepositoryapp.util.StaggeredVerticalGrid
 
 @Composable
-fun HomeScreen(
+fun DisplayImages(
+    images: List<Image>,
+    selectImage: (Long) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .verticalScroll(rememberScrollState())
+            .background(MaterialTheme.colors.background)
+    ) {
+        StaggeredVerticalGrid(
+            maxColumnWidth = 225.dp,
+            modifier = Modifier.padding(4.dp)
+        ) {
+
+            images.forEach { image ->
+                DisplayImage(image = image, selectImage = selectImage)
+            }
+
+        }
+    }
+}
+
+@Composable
+fun DisplayImage(
     image: Image,
     selectImage: (Long) -> Unit,
     modifier: Modifier = Modifier
